@@ -1,0 +1,47 @@
+.formItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form {
+  padding: 20px;
+}
+
+.form select {
+  padding: 4px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.form label {
+  font-weight: bolder;
+  padding: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.form input {
+  padding: 4px;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 20rem;
+  vertical-align: auto;
+}
+
+.form button {
+  padding: 5px;
+  color: red;
+  font-weight: bolder;
+  align-items: center;
+  margin-top: 20px;
+  float: right;
+}
+
+.inputError {
+  border-color: red;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}

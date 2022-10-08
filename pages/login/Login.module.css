@@ -1,0 +1,43 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.loginForm label {
+  font-weight: bolder;
+}
+.loginForm input {
+  padding: 5px;
+  margin-left: 20px;
+  margin: 5px;
+  width: 100%;
+}
+.loginForm button {
+  padding: 5px;
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
+  float: right;
+  width: 100px;
+}
+
+.forgetP {
+  color: gray;
+  font-weight: lighter;
+}
+
+.inputError {
+  border-color: red;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+}
