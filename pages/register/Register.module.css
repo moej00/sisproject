@@ -8,8 +8,7 @@
 
 .form select {
   padding: 4px;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin: 10px 5px;
   width: 10%;
 }
 
@@ -46,4 +45,5 @@
   font-weight: bold;
   display: block;
   font-size: 12px;
+  margin-left: 210px;
 }
