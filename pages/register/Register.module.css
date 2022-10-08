@@ -1,7 +1,6 @@
 .formItems {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .form {
   padding: 20px;
@@ -11,21 +10,22 @@
   padding: 4px;
   margin-top: 10px;
   margin-left: 10px;
+  width: 10%;
 }
 
 .form label {
   font-weight: bolder;
   padding: 5px;
+  width: 200px;
   display: inline-block;
   margin-top: 10px;
 }
 
 .form input {
-  padding: 4px;
-  margin-top: 10px;
-  margin-left: 10px;
-  width: 20rem;
-  vertical-align: auto;
+  display: inline-block;
+  padding: 5px;
+  margin: 10px 5px;
+  width: 70%;
 }
 
 .form button {
@@ -44,4 +44,6 @@
 .error {
   color: red;
   font-weight: bold;
+  display: block;
+  font-size: 12px;
 }
