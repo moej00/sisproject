@@ -29,6 +29,8 @@
 .forgetP {
   color: gray;
   font-weight: lighter;
+  cursor: pointer;
+  font-size: 12px;
 }
 
 .inputError {

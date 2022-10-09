@@ -9,7 +9,7 @@
 .form select {
   padding: 4px;
   margin: 10px 5px;
-  width: 10%;
+  width: auto;
 }
 
 .form label {
@@ -35,9 +35,14 @@
   margin-top: 20px;
   float: right;
 }
+.req {
+  color: red;
+  font-weight: bolder;
+}
 
 .inputError {
   border-color: red;
+  display: inline;
 }
 
 .error {

@@ -17,13 +17,12 @@ const Register = () => {
         program: "",
         password: "",
         confirmPassword: "",
-        mobileExtention: "",
+        areaCode: "",
         mobileNumber: "",
       },
       validationSchema: registerSchema,
       onSubmit,
     });
-  console.log(errors);
   return (
     <div className={classes.formItems}>
       <form className={classes.form} onSubmit={handleSubmit} autoComplete="off">
@@ -31,6 +30,7 @@ const Register = () => {
         <hr></hr>
         <div>
           <label htmlFor="firstname">FirstName</label>
+          <span className={classes.req}>*</span>
           <input
             type="text"
             id="firstname"
@@ -49,6 +49,7 @@ const Register = () => {
         )}
         <div>
           <label htmlFor="lastname">LastName</label>
+          <span className={classes.req}>*</span>
           <input
             type="text"
             id="lastname"
@@ -65,6 +66,7 @@ const Register = () => {
         )}
         <div>
           <label htmlFor="email">Email</label>
+          <span className={classes.req}>*</span>
           <input
             type="text"
             id="email"
@@ -81,6 +83,7 @@ const Register = () => {
         )}
         <div>
           <label htmlFor="program">Program/Programme</label>
+          <span className={classes.req}>*</span>
           <select
             id="program"
             value={values.program}
@@ -90,9 +93,9 @@ const Register = () => {
               errors.program && touched.program ? `${classes.inputError}` : ""
             }
           >
-            <option value = "">Please Select a Program</option>
-            <option value = "it">IT</option>
-            <option value = "business">Business</option>
+            <option value="">Please Select a Program</option>
+            <option value="it">IT</option>
+            <option value="business">Business</option>
           </select>
         </div>
         {errors.program && touched.program && (
@@ -100,6 +103,7 @@ const Register = () => {
         )}
         <div>
           <label htmlFor="password">Password</label>
+          <span className={classes.req}>*</span>
           <input
             type="password"
             id="password"
@@ -116,6 +120,7 @@ const Register = () => {
         )}
         <div>
           <label htmlFor="confirmPassword">Confrim Password</label>
+          <span className={classes.req}>*</span>
           <input
             type="password"
             id="confirmPassword"
@@ -133,22 +138,26 @@ const Register = () => {
           <span className={classes.error}>{errors.confirmPassword}</span>
         )}
         <div>
-          <label htmlFor="mobileNumber">mobile number</label>
+          <label htmlFor="mobileNumber">Mobile number</label>
+          <span className={classes.req}>*</span>
           <select
-            type="number"
-            id="mobileExtention"
-            value={values.mobileExtention}
+            id="areaCode"
+            value={values.areaCode}
             onChange={handleChange}
             onBlur={handleBlur}
+            className={
+              errors.areaCode && touched.areaCode ? `${classes.inputError}` : ""
+            }
           >
-            <option value="">Select Your Country</option>
+            <option value="">Area Code</option>
             <option value="+961">+961</option>
-            <option value = "+254">+254</option>
-            <option value = "+963">+963</option>
-            <option value = "+1">+1</option>
+            <option value="+254">+254</option>
+            <option value="+963">+963</option>
+            <option value="+1">+1</option>
           </select>
+
           <input
-            type="number"
+            type="phone"
             id="mobileNumber"
             value={values.mobileNumber}
             onChange={handleChange}
@@ -160,9 +169,13 @@ const Register = () => {
             }
           ></input>
         </div>
+        {errors.areaCode && touched.areaCode && (
+          <span className={classes.error}>{errors.areaCode}</span>
+        )}
         {errors.mobileNumber && touched.mobileNumber && (
           <span className={classes.error}>{errors.mobileNumber}</span>
         )}
+
         <div>
           <button type="submit">Register</button>
         </div>

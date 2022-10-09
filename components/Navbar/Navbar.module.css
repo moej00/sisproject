@@ -6,6 +6,8 @@
   justify-content: space-between;
   color: white;
   overflow: hidden;
+  position: fixed;
+  top: 0;
   width: 100%;
   border-bottom: 2px solid rgb(22, 22, 134);
 }

@@ -7,13 +7,15 @@ export const registerSchema = yup.object().shape({
     .string()
     .email("Please enter a valid email address!")
     .required("Email is Required!"),
-  program: yup.string("Please Select a program!").required('Please Select a Program!'),
+  program: yup
+    .string("Please Select a program!")
+    .required("Please Select a Program!"),
   password: yup.string().min(6).required("Password is Required!"),
   confirmPassword: yup
     .string()
     .oneOf([yup.ref("password"), null], "Password Doesn't Match!")
     .required("Password is Required!"),
-  mobileExtention: yup.number(),
+  areaCode: yup.string().required("Area Code is Required"),
   mobileNumber: yup.number().required("Mobile Number is Required!"),
 });
 
