@@ -2,9 +2,17 @@ import { useFormik } from "formik";
 import { registerSchema } from "../../Schemas";
 import classes from "./Register.module.css";
 
-const onSubmit = (values, actions) => {
+const onSubmit = async (values, actions) => {
+  const response = await fetch("/api/user", {
+    method: "POST",
+    body: JSON.stringify(),
+    headers: {
+      "Contecnt-Type": "application/json",
+    },
+  });
+  const data = await response.json();
   actions.resetForm();
-  console.log(values);
+  console.log(data);
 };
 
 const Register = () => {

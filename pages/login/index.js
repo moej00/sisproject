@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Register from "../register";
 import classes from "./Login.module.css";
-import { Field, useFormik } from "formik";
+import { useFormik } from "formik";
 import { loginSchema } from "../../Schemas";
+import Head from "next/head";
 
 const onSubmit = (values, actions) => {
   actions.resetForm();
@@ -22,16 +23,20 @@ const Login = () => {
 
   return (
     <>
+      <Head>
+        <title>ESA Login / Registration Page</title>
+      </Head>
       <form onSubmit={handleSubmit}>
         <div className={classes.loginForm}>
           <div className={classes.items}>
             <h1>Enter your Email and Password</h1>
             <div>
-              <label>Username</label>
+              <label>E-mail</label>
             </div>
             <div>
               <input
                 type="email"
+                id="lemail"
                 name="email"
                 placeholder="email@email.com"
                 value={values.email}
@@ -52,6 +57,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
+                id="lpassword"
                 placeholder="password"
                 value={values.password}
                 onChange={handleChange}
