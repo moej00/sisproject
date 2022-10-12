@@ -1,21 +1,28 @@
 import { useFormik } from "formik";
 import { registerSchema } from "../../Schemas";
 import classes from "./Register.module.css";
-
-const onSubmit = async (values, actions) => {
-  const response = await fetch("/api/user", {
-    method: "POST",
-    body: JSON.stringify(),
-    headers: {
-      "Contecnt-Type": "application/json",
-    },
-  });
-  const data = await response.json();
-  actions.resetForm();
-  console.log(data);
-};
+import axios from "axios";
 
 const Register = () => {
+  const onSubmit = async (values, actions) => {
+    try {
+      await axios.post("/api/user/register", {
+        firstname,
+        lastname,
+        email,
+        program,
+        password,
+        confirmPassword,
+        areaCode,
+        mobileNumber,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+    actions.resetForm();
+    console.log(values);
+  };
+
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
@@ -37,7 +44,7 @@ const Register = () => {
         <h1>New User? Register</h1>
         <hr></hr>
         <div>
-          <label htmlFor="firstname">FirstName</label>
+          <label htmlFor="firstname">First Name</label>
           <span className={classes.req}>*</span>
           <input
             type="text"
@@ -56,7 +63,7 @@ const Register = () => {
           <span className={classes.error}>{errors.firstname}</span>
         )}
         <div>
-          <label htmlFor="lastname">LastName</label>
+          <label htmlFor="lastname">Last Name</label>
           <span className={classes.req}>*</span>
           <input
             type="text"
@@ -165,7 +172,6 @@ const Register = () => {
           </select>
 
           <input
-            type="phone"
             id="mobileNumber"
             value={values.mobileNumber}
             onChange={handleChange}
